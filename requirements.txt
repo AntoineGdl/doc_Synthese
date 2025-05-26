@@ -1,0 +1,6 @@
+flask==2.3.3
+werkzeug==2.3.7
+pypdf2==3.0.1
+python-docx==0.8.11
+langchain==0.0.267
+python-dotenv==1.0.0
