@@ -1,0 +1,12 @@
+1. Le budget mis à jour est disponible dans le dossier "PJ 'doc_budget-excel'" en format
+Excel. Les coûts sont de 60€/H pour l'étude BE et entre 50€ et 65€/H pour l'atelier AT,
+basés sur leur complexité.
+2. Les frais d'intégration, câblage et mise en service sont calculés à partir d'un volume
+horaire typique.
+3. Seuls les fichiers Excel peuvent être envoyés pour l'expérience Gemini dans le PJ du
+chat, mais ils peuvent ensuite être convertis en Google Sheets. L'IA de Google offre une
+meilleure compréhension des normes de devis.
+4. Bien que plus rapide, l'IA de Gemini ne traite pas de documents.
+5. Les fichiers du devis sont disponibles dans les PJs "PJ 'Devis_Axivity'" et "PJ 'Devis
+sous Gemini'".
+

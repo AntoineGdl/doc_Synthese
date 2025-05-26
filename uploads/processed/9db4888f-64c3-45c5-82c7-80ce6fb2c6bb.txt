@@ -1,0 +1,1015 @@
+......................................................................... .
+Cahier technique n °207
+Les moteurs électriques
+… pour mieux les piloter et les protéger
+E. GaucheronCollection T echnique
+Building a New Electric W orld *
+Les Cahiers Techniques constituent une collection d’une centaine de titres
+édités à l’intention des ingénieurs et techniciens qui recherchent uneinformation plus approfondie, complémentaire à celle des guides, catalogueset notices techniques.
+Les Cahiers Techniques apportent des connaissances sur les nouvelles
+techniques et technologies électrotechniques et électroniques. Ils permet-tent également de mieux comprendre les phénomènes rencontrés dans lesinstallations, les systèmes et les équipements.Chaque Cahier Technique traite en profondeur un thème précis dans lesdomaines des réseaux électriques, protections, contrôle-commande et desautomatismes industriels.
+Les derniers ouvrages parus peuvent être téléchargés sur Internet à partir
+du site Schneider Electric.Code : http://www.schneider-electric.com
+Rubrique : Presse
+Pour obtenir un Cahier Technique ou la liste des titres disponibles contactez
+votre agent Schneider Electric.
+La collection des Cahiers T echniques s’insère dans la « Collection T echnique »
+de Schneider Electric.
+Avertissement
+L'auteur dégage toute responsabilité consécutive à l'utilisation incorrecte desinformations et schémas reproduits dans le présent ouvrage, et ne sauraitêtre tenu responsable ni d'éventuelles erreurs ou omissions, ni deconséquences liées à la mise en œuvre des informations et schémas contenusdans cet ouvrage.
+La reproduction de tout ou partie d’un Cahier Technique est autorisée avec
+la mention obligatoire :« Extrait du Cahier Technique Schneider Electric n ° (à préciser) ».
+Technicien sup érieur en électrotechnique, de formation. Apr ès un
+court passage chez Thomson il rejoint l ’activit é VVD (Variation de
+Vitesse et D émarreur) de T élémécanique en 1970 ; puis étant au
+service apr ès vente T élémécanique il compl ète sa formation aux
+Arts et M étiers de Paris. 
+Spécialiste de la commande des moteurs, il participe à l’évolution de
+la variation de vitesse vers la commande des moteurs alternatifs. Sonexpérience s ’enrichit dans les diff érents postes qu ’il occupe : plate-
+formiste syst ème puis chef de produits variateurs pour machine-outil,
+chef de produit variateur pour moteur asynchrone (produits Altivar) etresponsable de l ’équipe marketing projet de VVD.
+Actuellement, il est le sp écialiste «applications » autour de la
+commande moteur au sein de l ’équipe anticipation pour l ’activit é PCP
+(Protection et Commande de Puissance) de Schneider Electric.n° 207
+Les moteurs électriques
+… pour mieux les piloter et les prot éger
+CT 207 édition juin 2004Etienne Gaucheron
+Cahier Technique Schneider Electric n ° 207 / p.2
+Cahier Technique Schneider Electric n ° 207 / p.3Les moteurs électriques
+… pour mieux les piloter et les prot éger
+Sommaire
+1 Les moteurs asynchrones triphas és 1.1 Principe de fonctionnement p. 4
+1.2 Constitution p. 6
+1.3 Les différents types de rotor p. 6
+2 Les autres types de moteurs électriques 2.1 Les moteurs asynchrones monophasés p. 10
+2.2 Les moteurs synchrones p. 10
+2.3 Moteurs à courant continu p. 14
+3 Exploitation des moteurs asynchrones 3.1 Moteurs à cage p. 17
+3.2 Moteurs à bagues p. 19
+3.3 Autres systèmes de variation de vitesse p. 20
+4 Conclusion p. 22Les moteurs électriques sont de nos jours, à l’exception des dispositifs
+d’éclairage, les récepteurs les plus nombreux dans les industries et les
+installations tertiaires. Leur fonction, de convertir l’énergie électrique enénergie mécanique, leur donne une importance économique touteparticulière qui fait qu’aucun concepteur d’installation ou de machine,aucun installateur et aucun exploitant ne peut les ignorer.
+Parmi tous les types de moteurs existants, les moteurs asynchrones
+triphasés notamment les moteurs à cage sont les plus utilisés dansl’industrie et au-delà d’une certaine puissance dans les applications dubâtiment tertiaire. De plus, bien que leur commande par des équipementsà contacteurs soit parfaitement adaptée pour un grand nombred'applications, l'emploi de matériels électroniques en constante
+progression élargit leur champ d’application. C’est le cas pour contrôler le
+démarrage et l'arrêt avec les démarreurs-ralentisseurs progressifs, commelorsqu'un réglage précis de la vitesse est également nécessaire avec lesvariateurs-régulateurs de vitesse.
+Toutefois, les moteurs asynchrones à bagues sont utilisés pour certaines
+applications de forte puissance dans l’industrie et les moteurs asynchrones
+monophasés restent adaptés pour des applications de puissances limitéesplutôt pour les applications du bâtiment.
+L’utilisation des moteurs synchrones dits sans balais ou à aimants
+permanents associés à des convertisseurs se généralise dans les
+applications nécessitant de fortes performances, notamment en couple
+dynamique (au démarrage ou aux changements de régime), et enprécision et plage de vitesse.
+Ce Cahier Technique, après une présentation des divers types de moteurs
+électriques et de leur principe de fonctionnement, détaille plus
+particulièrement la technique et les particularités d'emploi des moteurs
+asynchrones, notamment les principaux dispositifs de démarrage, leréglage de vitesse et le freinage qui leur sont associés. Il est une base deconnaissance minimale pour bien comprendre toute la problématique quereprésente le pilotage et la protection des moteurs.
+Ce Cahier Technique aborde brièvement la variation de vitesse des
+moteurs électriques. Ce sujet est traité spécifiquement dans le Cahier
+Technique CT 208 « Démarreurs et variateurs de vitesse électroniques ».La protection des moteurs fait l’objet d’un Cahier Technique en cours derédaction.
+Cahier Technique Schneider Electric n ° 207 / p.41 Les moteurs asynchrones triphas és
+Ce chapitre est consacré à la présentation des
+moteurs asynchrones triphasés, moteurs lesplus utilisés pour l'entraînement des machines.
+Ces moteurs s’imposent en effet dans un grand
+nombre d'applications en raison des avantagesqu'ils présentent : normalisés, ils sont robustes,simples d’entretien, faciles à mettre en œuvre et
+de faible coût.La présentation des autres types de moteurs fait
+l’objet du chapitre 2.La description et la comparaison des principauxdispositifs de démarrage, réglage de vitesse et
+freinage qui leur sont associés font l’objet du
+chapitre 3.
+1.1 Principe de fonctionnement
+Le principe de fonctionnement d'un moteur
+asynchrone repose sur la création d'un courantinduit dans un conducteur lorsque celui-ci coupe
+les lignes de force d'un champ magnétique, d'où
+le nom de « moteur à induction ». L’actioncombinée de ce courant induit et du champmagnétique crée une force motrice sur le rotordu moteur.
+Supposons une spire ABCD en court-circuit,
+située dans un champ magnétique B, et mobileautour d'un axe xy (cf. fig. 1  ).
+Si, par exemple, nous faisons tourner le champ
+magnétique dans le sens des aiguilles d'une
+montre, la spire est soumise à un flux variable etdevient le siège d'une force électromotriceinduite qui donne naissance à un courant induit i(loi de Faraday).
+D'après la loi de Lenz, le sens du courant est tel
+qu'il s'oppose par son action électromagnétiqueà la cause qui lui a donné naissance. Chacundes deux conducteurs est donc soumis à une
+force F de Laplace (de Lorentz, pour les Anglo-
+saxons), de sens opposé à son déplacementrelatif par rapport au champ inducteur.
+La règle des trois doigts de la main droite (action
+du champ sur un courant, cf. fig. 2  ) permet de
+définir facilement le sens de la force F appliquée
+à chaque conducteur.
+Le pouce est placé dans le sens du champ de
+l'inducteur. L'index indique le sens de la force.Le majeur est placé dans le sens du courant
+induit. La spire est donc soumise à un couple qui
+provoque sa rotation dans le même sens que lechamp inducteur, appelé champ tournant. Laspire se met donc en rotation et le coupleélectromoteur produit équilibre le couplerésistant.
+Fig. 1  : Création d’un courant induit dans une spire en
+court-circuit.Fig. 2 : La règle des trois doigts de la main droite pour
+trouver la direction de la force.Champ
+Chemin
+(force)
+Courant
+NordiD
+F
+CyxA
+BiBSud
+F
+Cahier Technique Schneider Electric n ° 207 / p.5Création du champ tournant
+Trois enroulements, géométriquement décalés
+de 120 °, sont alimentés chacun par une des
+phases d'un réseau triphasé alternatif
+(cf.fig. 3 ). Les enroulements sont parcourus
+par des courants alternatifs présentant le mêmedécalage électrique, et qui produisent chacun unchamp magnétique alternatif sinusoïdal. Cechamp, toujours dirigé suivant le même axe, estmaximal quand le courant dans l'enroulement
+est maximal.
+Le champ généré par chaque enroulement est la
+résultante de deux champs qui tournent en sensinverse et ayant chacun pour valeur constante la
+moitié de la valeur du champ maximal. A un
+instant t1 quelconque de la période (cf. fig. 4 ),
+les champs produits par chaque enroulementpeuvent être représentés comme suit :
+v le champ H1 diminue. Les 2 champs qui le
+composent ont tendance à s'éloigner de l'axeOH1,
+v le champ H2 augmente. Les 2 champs qui le
+composent ont tendance à se rapprocher del'axe OH2,Fig. 3 : Principe d’un moteur asynchrone triphasé.
+Fig. 4 : Champs générés par les trois phases.v le champ H3 augmente. Les 2 champs qui le
+composent ont tendance à se rapprocher del'axe OH3.
+Le flux correspondant à la phase 3 est négatif.
+Le champ est donc dirigé dans le sens opposé àla bobine.
+En superposant les trois diagrammes, nous
+constatons que :
+v les trois champs tournant dans le sens inverse
+des aiguilles d'une montre sont décalés de 120 °
+et s'annulent,
+v les trois champs tournant dans le sens des
+aiguilles d'une montre se superposent. Ces
+champs s'additionnent pour former le champ
+tournant d'amplitude constante 3Hmax/2. C'estun champ à une paire de pôles.
+Ce champ effectue un tour pendant une période
+du courant d'alimentation. Sa vitesse est fonction
+de la fréquence du réseau (f), et du nombre de
+paires de pôles (p). Elle est appelée « vitesse desynchronisme ».
+Glissement
+Le couple moteur ne peut exister que si un
+courant induit circule dans la spire. Ce coupleest déterminé par le courant qui circule dans la
+spire et qui ne peut exister que s'il existe une
+variation de flux dans cette spire. Il faut doncqu'il y ait une différence de vitesse entre la spireet le champ tournant. C'est la raison pourlaquelle un moteur électrique fonctionnantsuivant le principe que nous venons de décrire
+est appelé « moteur asynchrone ». La différence
+entre la vitesse de synchronisme (Ns) et celle dela spire (N) est appelée « glissement » (g) ets'exprime en % de la vitesse de synchronisme.
+g = [(Ns - N) / Ns] x 100
+En fonctionnement, la fréquence du courant
+rotorique s’obtient en multipliant la fréquenced’alimentation par le glissement. Au démarragela fréquence du courant rotorique est donc
+maximale.120˚ 
+B3 B2
+H2 H3
+Ph2 Ph3 Ph1H1B1
+Ph1
+H2 max
+2
+Ph3
+Ph2H2O
+H2 max
+2H3 max
+2H3 max
+2H3
+O
+Ph2Ph3Ph1
+Ph2H1 max
+2H1 max
+2Ph1
+Ph3OH1
+Cahier Technique Schneider Electric n ° 207 / p.6Le glissement en régime établi est variable
+suivant la charge du moteur et selon le niveau
+de la tension d’alimentation qui lui est appliqué :
+il est d'autant plus faible que le moteur est peuchargé, et il augmente si le moteur est sous
+alimenté.
+Vitesse de synchronisme
+La vitesse de synchronisme des moteurs
+asynchrones triphasés est proportionnelle à lafréquence du courant d’alimentation et
+inversement proportionnelle au nombre de
+paires de pôles constituant le stator.
+Par exemple :
+Ns = 60 f/p
+Avec :
+v Ns : vitesse de synchronisme en tr/min
+v f : fréquence en Hz,
+v p : nombre de paires de pôles.
+Pour les fréquences industrielles de 50 Hz et
+60 Hz et une autre fréquence (100 Hz), les
+vitesses de rotation du champ tournant, ou
+vitesses de synchronisme, en fonction dunombre de pôles, sont données dans le tableau
+de la figure 5  .
+Dans la pratique il n’est pas toujours possible
+d'augmenter la vitesse d'un moteur asynchrone
+Fig. 5 : Vitesses de synchronisme fonction du nombre
+de pôles et de la fréquence du courant.en l'alimentant sous une fréquence supérieure à
+celle pour laquelle il est prévu, même si la
+tension est adaptée. Il convient en effet devérifier si ses conceptions mécanique etélectrique le permettent.A noter que compte tenu du glissement, les
+vitesses de rotation en charge des moteurs
+asynchrones sont légèrement inférieures auxvitesses de synchronisme indiquées dans letableau.
+1.2 Constitution
+Un moteur asynchrone triphasé à cage comporte
+deux parties principales : un inducteur ou statoret un induit ou rotor.
+Le stator
+C’est la partie fixe du moteur. Une carcasse en
+fonte ou en alliage léger renferme une couronne
+de tôles minces (de l'ordre de 0,5 mmd'épaisseur) en acier au silicium. Les tôles sont
+isolées entre elles par oxydation ou par un vernis
+isolant. Le « feuilletage » du circuit magnétiqueréduit les pertes par hystérésis et par courants
+de Foucault.
+Les tôles sont munies d’encoches dans
+lesquelles prennent place les enroulements
+statoriques destinés à produire le champ
+tournant (trois enroulements dans le cas d'unmoteur triphasé). Chaque enroulement est
+constitué de plusieurs bobines. Le mode de
+couplage de ces bobines entre elles définit le
+nombre de paires de pôles du moteur, donc lavitesse de rotation.
+Le rotor
+C’est l’élément mobile du moteur. Comme le
+circuit magnétique du stator, il est constitué d'unempilage de tôles minces isolées entre elles et
+formant un cylindre claveté sur l'arbre du moteur.
+Cet élément, de par sa technologie, permet de
+distinguer deux familles de moteurs asynchrones :
+ceux dont le rotor est dit « à cage », et ceux dont
+le rotor bobiné est dit « à bagues ».
+1.3 Les diff érents types de rotor
+Le rotor à cage
+Plusieurs types de rotor à cage existent, ils sont
+tous conçus selon l’exemple de la figure 6  .
+En citant ces moteurs dans l'ordre du moins
+répandu au plus courant :
+c Rotor à cage résistante
+Le rotor résistant existe surtout en simple cage(voir plus loin la définition du moteur simplecage). La cage est fermée par deux anneaux
+résistants (alliage particulier, section réduite,anneaux d'inox …).Ces moteurs présentent un fort glissement aucouple nominal.Leur couple de démarrage est élevé et lecourant de démarrage faible (cf. fig. 7 ).
+En raison des pertes dans le rotor, leurrendement est faible.Nombre Vitesse de rotation en tr/min
+de pôles
+50 Hz 60 Hz 100 Hz
+2 3000 3600 6000
+4 1500 1800 3000
+6 1000 1200 2000
+8 750 900 1500
+10 600 720 1200
+12 500 600 1000
+16 375 540 750
+Cahier Technique Schneider Electric n ° 207 / p.7Fig. 6 : Eclaté d’un moteur à rotor à cage.
+Ces moteurs sont en principe utilisés sur des
+applications pour lesquelles il est intéressantd’avoir du glissement afin d’adapter la vitesse enfonction du couple, par exemple :
+v cas de plusieurs moteurs liés mécaniquement
+sur lesquels doit être répartie la charge, tels que
+Fig. 7 : Courbes couple/vitesse suivant les types de
+rotors à cage (à Un).1. Ces moteurs asynchrones moto-ventilés à fort
+glissement sont utilisés en variation de vitesse, leurcourant au calage est voisin de leur courant nominal ; leur
+caractéristique de couple/vitesse est très plongeante.
+Avec une alimentation variable il est possible d'adapter
+cette caractéristique et de régler le couple moteur en
+fonction de la traction souhaitée.train à rouleaux d’un laminoir, entraînement d’unportique de levage ;
+v fonction enrouleur-dérouleur à partir de
+moteurs Alquist 
+(1) prévus à cet effet ;
+v besoin d’un fort couple de démarrage avec un
+courant d’appel limité (palans de levage ouconvoyeurs).
+Ils permettent la variation de vitesse par
+modification de la seule tension, mais cetteapplication tend à disparaître au profit desconvertisseurs de fréquence. Si tous les moteurssont auto-ventilés, certains moteurs avec rotor à
+cage résistante sont moto-ventilés (motorisation
+distincte de leur ventilateur).
+c Rotor à simple cage
+Dans des trous ou dans des encoches disposéssur le pourtour du rotor (à l’extérieur du cylindreconstitué par l’empilage de tôles) sont placés
+des conducteurs reliés à chaque extrémité par
+une couronne métallique et sur lesquels vients'exercer le couple moteur généré par le champtournant. Pour que le couple soit régulier, les
+N 0C
+Rotor à simple cage
+Rotor à double cage
+Rotor à cage résistante
+Boîte de 
+raccordement
+Enroulementstatorique
+Roulement
+Flasque paliercôté bout d'arbreRoulementRotor à cageStatorVentilateurCapot de
+ventilationFlasque paliercôté ventilateur
+Cahier Technique Schneider Electric n ° 207 / p.8conducteurs sont légèrement inclinés par rapport
+à l'axe du moteur. L’ensemble a l’aspect d’unecage d’écureuil, d’où le nom de ce type de rotor.
+La cage d’écureuil est généralemententièrement moulée, (seuls les très gros
+moteurs sont réalisés à l'aide de conducteurs
+insérés dans des encoches ). L’aluminium estinjecté sous pression et les ailettes derefroidissement, coulées lors de la mêmeopération, assurent la mise en court-circuit desconducteurs du stator.
+Ces moteurs ont un couple de démarrage
+relativement faible et le courant absorbé lors dela mise sous tension est très supérieur aucourant nominal (cf. fig. 7 ).
+En contre partie ils ont un faible glissement au
+couple nominal.
+Ces moteurs sont utilisés principalement en forte
+puissance pour améliorer le rendement desinstallations sur des pompes et ventilateurs. Ils
+sont également associés à des convertisseurs
+de fréquence en vitesse variable, les problèmesde couple et de courant de démarrage sont alorsparfaitement résolus.
+c Rotor à double cage
+Il comporte deux cages concentriques, l’uneextérieure, de faible section et assez résistante,I’autre intérieure, de forte section et derésistance plus faible.
+v Au début du démarrage, les courants
+rotoriques étant à fréquence élevée, l'effet depeau qui en résulte fait que la totalité du courantrotorique circule à la périphérie du rotor et doncdans une section réduite des conducteurs. Au
+début du démarrage, le courant rotorique étant
+de fréquence élevée, le courant ne circule quedans la cage extérieure. Le couple produit par lacage extérieure résistante est important etl’appel de courant réduit (cf. fig. 7 ).
+v En fin de démarrage, la fréquence diminue
+dans le rotor, le passage du flux à travers la
+cage intérieure est plus facile. Le moteur secomporte alors sensiblement comme s’il étaitconstruit avec une seule cage peu résistante.En régime établi, la vitesse n’est que trèslégèrement inférieure à celle du moteur à simple
+cage.c Rotor à encoches profondes
+C'est la réalisation standard.Les conducteurs rotoriques sont moulés dansles encoches du rotor qui sont de formetrapézoïdale dont le petit coté du trapèze sesitue à l'extérieur du rotor.
+Le fonctionnement est analogue au moteur à
+double cage : l’intensité du courant rotoriquevarie en fonction inverse de sa fréquence.
+Ainsi :
+v Au début du démarrage, le couple est élevé et
+l’appel de courant réduit.
+v En régime établi, la vitesse est sensiblement
+celle du moteur à simple cage.
+Le rotor bobin é (rotor à bagues)
+Dans des encoches pratiquées à la périphérie
+du rotor sont logés des enroulements identiques
+à ceux du stator (cf. fig. 8  ). Généralement le
+rotor est triphasé.
+Une extrémité de chacun des enroulements est
+reliée à un point commun (couplage étoile). Lesextrémités libres peuvent être raccordées sur uncoupleur centrifuge ou sur trois bagues en
+cuivre, isolées et solidaires du rotor. Sur ces
+bagues viennent frotter des balais à base degraphite raccordés au dispositif de démarrage.
+En fonction de la valeur des résistances
+insérées dans le circuit rotorique, ce type demoteur peut développer un couple de démarrages’élevant jusqu’à 2,5 fois le couple nominal.
+Le courant au démarrage est sensiblement
+proportionnel au couple développé sur l’arbremoteur.Cette solution est de plus en plus abandonnéeau profit de solutions électroniques associées àun moteur à cage standard. En effet ces
+dernières permettent de résoudre des problèmes
+de maintenance (remplacement des balaisd’alimentation du rotor usés, entretien desrésistances de réglage), de réduire l’énergiedissipée dans ces résistances et aussid’améliorer de façon importante le rendement de
+l’installation.
+Cahier Technique Schneider Electric n ° 207 / p.9Fig. 8 : Eclaté d’un moteur à rotor à bagues.
+Boîte de 
+raccordement
+Roulement
+Balais
+Flasque paliercôté bout d'arbreRoulementRotor bobinéà encoches StatorVentilateurCapot de
+ventilationFlasque paliercôté bagues
+BaguesCouvercle d'accès aux balais
+Cahier Technique Schneider Electric n ° 207 / p.102  Les autres types de moteurs électriques
+2.1 Les moteurs asynchrones monophas és
+Le moteur asynchrone monophasé, bien que
+moins utilisé dans l’industrie que son homologue
+triphasé, représente néanmoins une partd'applications non négligeable dans les petitespuissances et dans les applications du bâtiment
+qui utilisent le réseau monophasé 230 V .
+A puissance égale, il est plus volumineux qu'un
+moteur triphasé.
+Par ailleurs, son rendement et son cosinus 
+ϕ
+sont beaucoup plus faibles que dans le cas du
+triphasé et ils varient considérablement enfonction d’une part de la puissance, d’autre partdu constructeur.Les moteurs monophasés jusqu’à une dizaine
+de kW sont d’utilisation courante aux Etats Unis.
+Constitution
+Le moteur monophasé, comme le moteur
+triphasé, est composé de deux parties : le statoret le rotor.
+c Le stator
+Il comporte un nombre pair de pôles et ses
+bobinages sont raccordés sur le réseau
+d’alimentation.
+c Le rotor
+Il est le plus souvent à cage d’écureuil.
+Principe de fonctionnement
+Considérons un stator comprenant deux
+enroulements raccordés sur le réseaud’alimentation L1 et N (cf. fig. 9  ).
+Le courant alternatif monophasé engendre dans
+le rotor un champ alternatif simple H qui est lasuperposition de deux champs tournants H1 etH2 de même valeur et de sens contraires.A l’arrêt, le stator étant alimenté, ces champs
+présentent le même glissement par rapport aurotor et produisent par conséquent deux coupleségaux et opposés. Le moteur ne peut démarrer.Une impulsion mécanique sur le rotor provoqueune inégalité des glissements. L’un des couplesdiminue pendant que l’autre augmente. Le
+couple résultant provoque le démarrage du
+moteur dans le sens où il a été lancé.
+Afin de résoudre ce problème de couple lors de
+la phase de démarrage, un deuxième bobinage
+décalé de 90 ° est inséré dans le stator. Cette
+phase auxiliaire est alimentée par un artifice dedéphasage (condensateur ou inductance) ; unefois le démarrage effectué la phase auxiliaire
+peut être supprimée.
+Nota : Un moteur triphasé peut être également
+utilisé en monophasé, le condensateur dedémarrage est alors inséré en série ou en
+parallèle avec l’enroulement non utilisé.
+Fig. 9 : Principe de fonctionnement d’un moteur
+asynchrone monophasé.
+2.2. Les moteurs synchrones
+Constitution
+Le moteur synchrone se compose, comme le
+moteur asynchrone, d'un stator et d'un rotor
+séparés par l'entrefer. Il s'en différencie par le
+fait que le flux dans l'entrefer n'est pas dû à une
+composante du courant statorique : il est créé
+par des aimants ou par le courant inducteurfourni par une source à courant continu
+extérieure qui alimente un enroulement placé
+dans le rotor.
+c Le stator
+Le stator comprend une carcasse et un circuit
+magnétique généralement constitués de tôlesd'acier au silicium et d’un bobinage triphasé
+analogue à celui d’un moteur asynchrone
+alimenté en courant alternatif triphasé pourproduire un champ tournant.
+c Le rotor
+Le rotor porte des aimants ou des bobinesd'excitation parcourues par un courant continuqui créent des pôles Nord et Sud intercalés. Lerotor, à la différence des machines asynchronestourne sans glissement à la vitesse du champ
+tournant.
+Il existe donc deux types distincts de moteurs
+synchrones : les moteurs à aimants et les
+moteurs à rotor bobiné.L1 NH1 H2H
+Enroulement 
+statoriqueEnroulement 
+statorique
+Rotor
+Cahier Technique Schneider Electric n ° 207 / p.11v Pour les premiers, le rotor du moteur est
+équipé d'aimants permanents (cf. fig. 10  ), en
+général en terre rare pour obtenir un champélevé dans un volume réduit. Le stator comporteles enroulements triphasés.
+Ces moteurs peuvent accepter des courants de
+surcharge importants pour réaliser desaccélérations très rapides. Ils sont toujoursassociés à un variateur de vitesse et ces
+ensembles moto-variateurs sont destinés à des
+marchés spécifiques comme ceux des robots oudes machines-outils pour lesquels un moindrevolume des moteurs, les accélérations et la
+bande passante sont des impératifs.
+Fig. 10 : Coupe d’un moteur à aimants permanents.
+v Les autres machines synchrones sont à rotor
+bobiné, elles sont réversibles et peuvent
+fonctionner en générateurs (alternateurs) ou en
+moteurs. Pendant longtemps ces machines ont
+surtout été utilisées en alternateurs. Leur usage
+en moteur était pratiquement confiné aux
+applications où il était nécessaire d'entraîner des
+charges à vitesse fixe en dépit des variationsrelativement importantes de leur couple
+résistant.
+Le développement des convertisseurs de
+fréquence directs (du type cycloconvertisseur)
+ou indirects fonctionnant en commutationnaturelle grâce à l'aptitude des machines
+synchrones à fournir de la puissance réactive, a
+permis la réalisation d'entraînements électriques
+à vitesse variable performants, fiables et
+particulièrement compétitifs par rapport aux
+solutions concurrentes lorsque la puissance
+dépasse le mégawatt.
+Bien que l’on puisse trouver des moteurs
+synchrones utilisés industriellement dans lagamme de puissance de 150 kW à 5 MW, c’est
+au-delà de 5 MW que les entraînements
+électriques utilisant des moteurs synchrones se
+sont pratiquement imposés, majoritairement
+associés à des variateurs de vitesse.Caract éristiques de fonctionnement
+Le couple moteur de la machine synchrone est
+proportionnel à la tension à ses bornes alors quecelui de la machine asynchrone estproportionnel au carré de cette tension.
+Contrairement au moteur asynchrone, il peut
+travailler avec un facteur de puissance égal àl'unité ou très voisin de celle-ci.
+Le moteur synchrone, par rapport au moteur
+asynchrone, bénéficie donc d’un certain nombre
+de particularités avantageuses en ce quiconcerne son alimentation par le réseau àtension et fréquence constantes :
+v la vitesse du moteur est constante, quelle que
+soit la charge ;
+v il peut fournir de la puissance réactive et
+permettre d’améliorer le facteur de puissance
+d’une installation,
+v il peut supporter sans décrocher des chutes de
+tension relativement importantes (de l'ordre de
+50 % en raison de ses possibilités desurexcitation).
+Toutefois, le moteur synchrone alimenté
+directement par le réseau de distributiond'énergie à tension et fréquence constantesprésente deux inconvénients :
+v il a des difficultés de démarrage ; de fait, si le
+moteur n’est pas associé à un variateur devitesse, le démarrage doit s’effectuer à vide, soitpar démarrage direct pour les petits moteurs,
+soit à l’aide d’un moteur de lancement qui
+l’entraîne à une vitesse proche du synchronismeavant le couplage direct sur le réseau,
+v il peut décrocher si le couple résistant dépasse
+son couple électromagnétique maximal et, dansce cas, il faut reprendre tout le processus dedémarrage.
+Autres types de moteurs synchrones
+Pour terminer le tour d’horizon des moteurs
+industriels citons les moteurs linéaires, lesmoteurs asynchrones synchronisés et lesmoteurs pas à pas.
+c Les moteurs linéaires
+Leur structure est identique à celle des moteursrotatifs de type synchrone : ils sont composésd’un stator (plateau) et d’un rotor (tige d’avance)développés en ligne. En général le plateau sedéplace sur une glissière le long de la tiged’avance.
+Ce type de moteur s’affranchit de toute
+cinématique intermédiaire pour la transformationdu mouvement d’où l’absence de jeu et d’usuremécanique de cet entraînement.
+c Les moteurs asynchrones synchronisés
+Ce sont des moteurs à induction. Lors de laphase de démarrage, le moteur fonctionne enmode asynchrone et lorsqu'il a atteint unevitesse proche du synchronisme, il passe enmode synchrone.11
+10121
+2
+3
+4
+5
+6789SSN
+NEnroulement
+statorique
+Rotor à 
+aimantspermanents(4 pôles)
+Cahier Technique Schneider Electric n ° 207 / p.12Si sa charge mécanique est importante, il ne
+peut plus tourner en mode synchrone et repasse
+en mode asynchrone.
+Cette particularité est obtenue par une
+construction spéciale du rotor et en général pour
+des moteurs de faible puissance.
+c Les moteurs pas à pas
+Le moteur pas à pas est un moteur qui tourne en
+fonction des impulsions électriques alimentant
+ses bobinages. Selon son alimentationélectrique, il peut être de type :
+v unipolaire si ses bobinages sont toujours
+alimentés dans le même sens par une tensionunique, d'où le nom d'unipolaire ;
+v bipolaire lorsque ses bobinages sont alimentés
+tantôt dans un sens, tantôt dans l'autre sens. Ils
+créent une fois un pôle Nord, une fois un pôleSud d'où le nom de bipolaire.Les moteurs pas à pas peuvent être à réluctance
+variable, à aimants ou une combinaison des
+deux (cf. fig. 11  ).
+L'angle de rotation minimal entre deux
+modifications des impulsions électriquess'appelle un pas. On caractérise un moteur parle nombre de pas par tour (c’est-à-dire pour
+360°). Les valeurs courantes sont 48, 100 ou
+200 pas par tour.
+La rotation du moteur se fait donc de manière
+discontinue. Pour améliorer la résolution, cenombre de pas peut être augmenté de manière
+purement électronique (fonctionnement en
+micropas).
+En faisant varier par échelon le courant
+(cf.fig. 12  ) dans les bobines, on crée un champ
+résultant qui glisse d'un pas à un autre, ce qui a
+pour résultat la réduction effective du pas.Les circuits pour micropas multiplient par 500 le
+nombre de pas d’un moteur qui passe ainsi, par
+exemple, de 200 à 100 000 pas.
+L'électronique permet de piloter la chronologie
+de ces impulsions et d'en comptabiliser le
+nombre. Les moteurs pas à pas et leur circuit de
+commande permettent ainsi la rotation d'un axe
+avec beaucoup de précision en vitesse et en
+amplitude.
+Leur fonctionnement s’apparente donc à celui
+d’un moteur synchrone quand l’arbre est en
+rotation continue, ce qui correspond à des
+Fig. 11 : Les trois types de moteur pas à pas.45˚15˚ 30˚Type Bipolaire à Unipolaire à Bipolaire
+aimant r éductance hybride
+permanent variable
+Caractéristiques 2 phases, 4 fils 4 phases, 8 fils 2 phases, 4 fils
+Nombre pas/tour 8 24 12
+Etapes de Fonctionnement
+Pas 1
+Etat intermédiaire
+Pas 2
+Cahier Technique Schneider Electric n ° 207 / p.13Fig. 12 : Echelons de courant appliqués aux bobines d’un moteur pas à pas pour réduire son pas.limites spécifiées de fréquence, de couple et
+d’inertie de la charge entraînée (cf. fig. 13  ). Si
+ces limites sont dépassées, le moteur décrochece qui se traduit par l’arrêt du moteur.
+Un positionnement angulaire précis est possible
+sans boucle de mesure. Ces moteurs depuissance en général en dessous du kW, sont,pour les petits modèles alimentés en bassetension. Industriellement, ces moteurs sont
+utilisés pour des applications de positionnement
+telles que réglage de butées pour coupe à
+Fig. 13 : Couple maximal en fonction de la fréquence du pas.longueur, commande de vannes, de dispositifs
+optiques ou de mesure, chargement décharge-ment de presses ou de machines outils etc.
+La simplicité de cette solution la rend
+particulièrement économique (pas de boucle de
+retour). Les moteurs pas à pas à aimantsprésentent également l’avantage d’un couple àl’arrêt en l’absence d’alimentation. Par contre, laposition initiale du mobile doit être connue etprise en compte par l’électronique afin d’assurer
+un pilotage efficace.
+Fréquence limite de démarrage
+Plage d'accélération
+Couple limite de travail
+Fréquence maximale des pas
+Fréquence des pas (Hz)Couple
+Couple
+d'arrêt
+Plage de démarrage0,86
+0,5B1 I1
+B1
+t B2
+I2
+B2
+t
+Cahier Technique Schneider Electric n ° 207 / p.142.3 Moteurs à courant continu
+Les moteurs à courant continu à excitation
+séparée sont encore quelquefois utilisés pour
+l'entraînement à vitesse variable des machines.Très faciles à miniaturiser, ils s'imposent dansles très faibles puissances et les faiblestensions. Ils se prêtent également fort bien,jusqu'à des puissances importantes (plusieursmégawatts), à la variation de vitesse avec des
+technologies électroniques simples et peu
+onéreuses pour des performances élevées(plage de variation couramment exploitée de 1 à100).
+Leurs caractéristiques permettent également une
+régulation précise du couple, en moteur ou en
+générateur. Leur vitesse de rotation nominale,indépendante de la fréquence du réseau, estaisément adaptable par construction à toutes lesapplications.
+Ils sont en revanche moins robustes que les
+moteurs asynchrones et beaucoup plus chers,
+tant en coût matériel qu'en maintenance, car ils
+nécessitent un entretien régulier du collecteur etdes balais.
+Constitution
+Un moteur à courant continu est composé des
+éléments suivants :
+c L'inducteur ou stator
+C'est un élément du circuit magnétique immobilesur lequel un enroulement est bobiné afin de
+produire un champ magnétique. L'électro-aimant
+ainsi réalisé comporte une cavité cylindriqueentre ses pôles.c L'induit ou rotor
+C'est un cylindre en tôles magnétiques isolées
+entre elles et perpendiculaires à l'axe du
+cylindre. L'induit est mobile en rotation autour deson axe et est séparé de l'inducteur par unentrefer. A sa périphérie, des conducteurs sontrégulièrement répartis.c Le collecteur et les balais
+Le collecteur est solidaire de l'induit.Les balais sont fixes, ils frottent sur le collecteuret ainsi alimentent les conducteurs de l'induit.
+Principe de fonctionnement
+Lorsque l'inducteur est alimenté, il crée un
+champ magnétique (flux d’excitation) dansl'entrefer, dirigé suivant les rayons de l'induit. Cechamp magnétique « rentre » dans l'induit ducôté du pôle Nord de l'inducteur et « sort » del'induit du côté du pôle Sud de l'inducteur.
+Quand l'induit est alimenté, ses conducteurs
+situés sous un même pôle inducteur (d'un mêmecôté des balais) sont parcourus par des courantsde même sens et sont donc, d'après la loi de
+Laplace, soumis à une force. Les conducteurs
+situés sous l'autre pôle sont soumis à une forcede même intensité et de sens opposé. Les deux
+forces créent un couple qui fait tourner l'induit du
+moteur (cf. fig. 14  ).
+Lorsque l’induit du moteur est alimenté sous une
+tension continue ou redressée U, il produit uneforce contre-électromotrice E dont la valeur est
+E=U–R
+I
+RI représente la chute de tension ohmique dans
+l'induit.
+La force contre-électromotrice E est liée à la
+vitesse et à l'excitation par la relation E = k ω Φ
+dans laquelle :
+v k est une constante propre au moteur,
+v ω, la vitesse angulaire,
+v Φ, le flux.
+Cette relation montre qu'à excitation constante la
+force contre-électromotrice E, proportionnelle à
+ω, est une image de la vitesse.
+Le couple est lié au flux inducteur et au courant
+dans l'induit par la relation :
+C = k Φ I
+En réduisant le flux, le couple diminue.
+Deux méthode permettent de faire croître la
+vitesse.
+c Soit augmenter la force contre-électromotrice E,
+donc la tension d'alimentation à excitation
+constante : c'est le fonctionnement dit « à couple
+constant » ;
+c Soit diminuer le flux d'excitation, donc le
+courant d'excitation, en maintenant la tensiond'alimentation constante : c'est lefonctionnement dit en régime « défluxé » ou « àpuissance constante ». Ce fonctionnementimpose que le couple soit décroissant avecl'augmentation de vitesse (cf. fig. 15  ). D'autre
+part, pour des rapports élevés de défluxage cefonctionnement nécessite des moteurs
+Fig. 14 : Production d’un couple dans un moteur à
+courant continu.F
+F
+ififI
+IN SPôle inducteur Pôle inducteurBalai
+Balai
+Cahier Technique Schneider Electric n ° 207 / p.15spécialement adaptés (mécaniquement et
+électriquement) pour s'affranchir des problèmes
+de commutation.
+Le fonctionnement d'un tel appareil (moteur à
+courant continu) est réversible :
+v si la charge s’oppose au mouvement de
+rotation (charge dite résistante), l’appareil fournitun couple et fonctionne en moteur,
+v si la charge est telle qu’elle tend à faire tourner
+l’appareil (charge dite entraînante) ou qu’elles’oppose au ralentissement (phase d’arrêt d’une
+charge présentant une certaine inertie), l’appareil
+fournit de l'énergie électrique et fonctionne engénératrice.Différents types de moteurs à courant
+continu (cf. fig. 16  )
+c A excitation parallèle (séparée ou shunt)
+Les bobinages, induit et inducteur, sontconnectés en parallèle ou alimentés par deuxsources de tensions différentes pour desquestions d’adaptation aux caractéristiques de la
+machine (ex. : tension d’induit 400 volts et
+tension d’inducteur 180 volts).
+L'inversion du sens de rotation s'obtient par
+l'inversion de l'un ou de l'autre des
+enroulements, en général par inversion de la
+tension d'induit en raison des constantes detemps beaucoup plus réduites. La majorité des
+Fig. 15  : Courbes couple/vitesse d’un moteur à excitation séparée.
+Fig. 16 : Schémas des différents types de moteurs à courant continu.Couple
+Un;Φn
+0 Nmax
+-Cn
+-CmaxCnI = InI = Imax
+I = -In
+I = -ImaxCmax
+VitesseFonctionnement à :
+couple puissanceconstant constanteb : à puissance constante a : à couple constant
+Couple
+U=- U
+n
+U=0U
+=-0 , 8U
+nU
+=-0 , 6
+U
+nU
+=
+-0 , 4U
+nU=-0 , 2U
+nU=0 , 2U
+nU
+=0 , 4
+U
+nU
+=0 , 8
+U
+nU
+=
+U
+nU
+=0 , 6
+U
+n
+Vitesse0 Nn
+M
+M MMAlim 1 Alima : Moteur à excitation séparée
+b : Moteur à excitation sériec : Moteur à excitation shunt
+d : Moteur à excitation composéeAlim 2
+Alim Alim
+Cahier Technique Schneider Electric n ° 207 / p.16variateurs bidirectionnels pour moteur à courant
+continu travaillent de la sorte.
+c A excitation série
+Ce moteur est de construction semblable à celledu moteur à excitation séparée. Le bobinage
+inducteur est connecté en série avec le
+bobinage induit, d'où son appellation.
+L'inversion du sens de rotation est obtenue
+indifféremment par inversion des polarités de
+l'induit ou de l'inducteur. Ce moteur est
+essentiellement utilisé en traction, en particuliersur les chariots alimentés par batteriesd’accumulateurs. En traction ferroviaire les
+anciennes motrices du TGV utilisaient ce type de
+moteur, les plus récentes utilisent des moteursasynchrones.c A excitation série parallèle (composée ou
+« compound »)
+Cette technologie permet de réunir les qualitésdu moteur à excitation série et du moteur àexcitation parallèle.
+Ce moteur comporte deux enroulements par
+pôle inducteur. L'un est en parallèle avec l'induit.
+Il est parcouru par un faible courant au regard du
+courant de travail. L'autre est en série.
+Le moteur est à flux additif si les ampères-tours
+des deux enroulements ajoutent leurs effets. Ilest à flux soustractif dans le cas contraire, mais
+ce mode de montage est très rarement utilisé car
+il conduit à un fonctionnement instable pour les
+fortes charges.
+Cahier Technique Schneider Electric n ° 207 / p.173  Exploitation des moteurs asynchrones
+3.1 Moteurs à cage
+Cons équences d ’une variation de tension
+c Effet sur le courant de démarrage
+Le courant de démarrage varie avec la tension
+d’alimentation. Si celle-ci est plus élevée
+pendant la phase de démarrage, le courant
+absorbé à l’instant de la mise sous tension
+augmente. Cette augmentation de courant est
+aggravée par la saturation de la machine.
+c Effet sur la vitesse
+Lors des variations de tension, la vitesse de
+synchronisme n’est pas modifiée, mais sur un
+moteur en charge, une augmentation de la
+tension entraîne une légère diminution duglissement. Concrètement, cette propriété est
+inexploitable car en raison de la saturation du
+circuit magnétique du stator, le courant absorbé
+augmente fortement et un échauffement anormal
+de la machine est à craindre même sur un
+fonctionnement à faible charge. En revanche, si
+la tension d’alimentation décroît le glissementaugmente et, pour fournir le couple le courant
+absorbé augmente, avec le risque
+d'échauffement qui en résulte. D'autre part,
+comme le couple maximum décroît comme le
+carré de la tension, un décrochage est possibleen cas de diminution importante de tension.
+Cons équences d'une variation de fr équence
+c Effet sur le couple
+Comme dans toute machine électrique, le couple
+du moteur asynchrone est de la forme
+C = K 
+I Φ
+(K = cœfficient constant dépendant de la
+machine)
+Dans le schéma équivalent de la figure 17  , le
+bobinage L est celui qui produit le flux et Io est le
+courant magnétisant.
+En première approximation, en négligeant la
+résistance devant l'inductance magnétisante
+(c'est-à-dire pour des fréquences de quelques
+Hertz) le courant Io a pour expression :
+Io = U / 2 π L f
+et le flux aura pour expression :
+Φ = k Io
+Le couple de la machine a donc pour
+expression :
+C = K k Io I
+Io et I sont les courants nominaux pour lesquels
+le moteur est dimensionné.
+Pour ne pas dépasser les limites il faut maintenir
+Io à sa valeur nominale, ce qui ne peut s'obtenir
+que si le rapport U/f reste constant.Fig. 17 : Schéma équivalent d’un moteur asynchrone.
+Par conséquent, il est possible d'obtenir le
+couple et les courants nominaux tant que la
+tension d'alimentation U peut être ajustée en
+fonction de la fréquence.
+Quand cet ajustement n’est plus possible, la
+fréquence peut toujours être augmentée, mais le
+courant Io diminue et le couple utile égalementcar il n’est pas possible de dépasser de manière
+continue le courant nominal de la machine sans
+risque d’échauffement.
+Pour obtenir un fonctionnement à couple
+constant quelle que soit la vitesse il fautmaintenir le ratio U/F constant… ce que réalise
+un convertisseur de fréquence.
+c Effet sur la vitesse
+La vitesse de rotation d'un moteur asynchrone
+est proportionnelle à la fréquence de la tension
+d’alimentation. Cette propriété est souventutilisée pour faire fonctionner à très grande
+vitesse des moteurs spécialement conçus, par
+exemple avec une alimentation en 400 Hz
+(rectifieuses, appareils de laboratoire ou
+chirurgicaux, etc.) Il est aussi possible d’obtenir
+une vitesse variable par réglage de la fréquence,
+par exemple de 6 à 50 Hz (rouleauxtransporteurs, appareils de levage, etc.).
+Réglage de vitesse des moteurs asynchrones
+triphas és
+(sujet détaillé dans le Cahier Technique n ° 208)
+Pendant longtemps, les possibilités de réglage
+de la vitesse des moteurs asynchrones ont étédes plus réduites. Les moteurs à cage étaient la
+plupart du temps utilisés à leur vitesse nominale.
+Pratiquement seuls les moteurs à couplage de
+pôles ou à enroulements statoriques séparés,Stator Rotor
+Inductance 
+de fuitePertes
+« Joule »
+Inductance   L
+de flux magnétiquePertes
+« fer »Puissance
+active
+Io
+Cahier Technique Schneider Electric n ° 207 / p.18encore fréquemment utilisés de nos jours,
+permettaient de disposer de plusieurs vitesses
+fixes.
+Avec les convertisseurs de fréquence, les
+moteurs à cage sont aujourd'hui couramment
+commandés en vitesse variable, et peuvent ainsiêtre employés dans des applications jusqu'alorsréservées aux moteurs à courant continu.
+Moteurs à couplage de p ôles
+Comme nous l’avons vu précédemment, la
+vitesse d’un moteur à cage est fonction de la
+fréquence du réseau d’alimentation et du
+nombre de paires de pôles. Il est donc possible
+d’obtenir un moteur à deux ou plusieurs vitesses
+en créant dans le stator des combinaisons de
+bobinages qui correspondent à des nombres de
+pôles différents.Ce type de moteur ne permet que des rapportsde vitesses de 1 à 2 (4 et 8 pôles, 6 et 12 pôles,
+etc.). Il comporte six bornes (cf. fig. 18  ).
+Pour l’une des vitesses, le réseau est connecté
+sur les trois bornes correspondantes. Pour la
+seconde, celles-ci sont reliées entre elles, leréseau étant branché sur les trois autres bornes.
+Le plus souvent, aussi bien en grande qu’en
+petite vitesse, le démarrage s’effectue par
+couplage au réseau sans dispositif particulier
+(démarrage direct).
+Dans certains cas, si les conditions d’exploitation
+l’exigent et si le moteur le permet, le dispositif de
+Fig. 18 : Différents types de couplage Dahlander.démarrage réalise automatiquement le passage
+en petite vitesse avant d’enclencher la grandevitesse ou avant l'arrêt.
+Suivant les courants absorbés lors des
+couplages Petite Vitesse -PV- ou GrandeVitesse -GV-, la protection peut être réalisée parun même relais thermique pour les deuxvitesses ou par deux relais (un pour chaquevitesse).
+Généralement, ces moteurs ont un rendement
+peu élevé et un facteur de puissance assezfaible.
+Moteurs à enroulements statoriques s éparés
+Ce type de moteurs, comportant deux
+enroulements statoriques électriquementindépendants, permet d'obtenir deux vitessesdans un rapport quelconque. Cependant leurs
+caractéristiques électriques sont souvent
+affectées par le fait que les enroulements PVdoivent supporter les contraintes mécaniques etélectriques résultant du fonctionnement dumoteur en GV. Ainsi, de tels moteursfonctionnant en PV absorbent parfois un courant
+plus important qu'en GV.
+Il est également possible de réaliser des
+moteurs à trois ou quatre vitesses en procédantau couplage des pôles sur l'un des enroulementsstatoriques ou sur les deux. Cette solution exigedes prises supplémentaires sur les bobinages.
+Ph1
+2U 2W2V
+1U 1W1V2U 2W2V
+1U 1W1VPh2 Ph3Grande vitesse Grande vitesse
+Ph1 Ph2 Ph3Petite vitesse
+Ph1
+2U 2W2V
+1U 1W1V2U 2W2V
+1U 1W1VPh2 Ph3Grande vitesse
+Ph1 Ph2 Ph3Petite vitesse Grande vitesse Petite vitesseCouplage Dahlander triangle/étoile (pour couple constant)
+Couplage Dahlander étoile/étoile-étoile (pour couple quadratique)Petite vitesse
+Ph2Ph1
+2V2U 2W
+1V 1W1U 
+Ph3 Ph2Ph1
+2U
+2W 2V1U 1W 
+1V 
+Ph3
+Ph1
+2V 2W2U
+1W 1V1U 
+Ph3 Ph2Ph1
+2U
+2W2V1U 
+1W 
+1V 
+Ph3 Ph2
+Cahier Technique Schneider Electric n ° 207 / p.193.2 Moteurs à bagues
+Utilisation de la r ésistance rotorique
+La résistance rotorique pour ce type de moteur
+permet de définir :
+v son couple de démarrage (cf. chap. 1),
+v et sa vitesse.
+En effet, le raccordement d’une résistance
+permanente aux bornes du rotor d’un moteur à
+bagues abaisse sa vitesse, et cela d’autant plusque la résistance est de valeur élevée. C’est unesolution simple pour faire varier la vitesse.
+Réglage de vitesse par glissement
+Ces résistances rotoriques ou « de glissement »
+peuvent être court-circuitées en plusieurs cranspour obtenir soit un réglage discontinu de lavitesse, soit l’accélération progressive et ledémarrage complet du moteur. Elles doiventsupporter la durée du fonctionnement, surtoutquand elles sont prévues pour faire varier la
+vitesse. De ce fait, leur volume est parfois
+important et leur coût élevé.
+Ce procédé extrêmement simple est de moins
+en moins employé car il présente deuxinconvénients importants :
+v pendant la marche à vitesse réduite, une
+grande partie de l’énergie prise au réseau estdissipée en pure perte dans les résistances,
+v la vitesse obtenue n’est pas indépendante de
+la charge, mais varie avec le couple résistant
+Fig. 19  : Courbe vitesse/couple avec résistance « de glissement ».appliqué par la machine sur l’arbre du moteur
+(cf. fig. 19  ). Pour une résistance donnée, le
+glissement est proportionnel au couple. Ainsi parexemple, la baisse de vitesse obtenue par unerésistance peut être de 50 % à pleine charge et25 % seulement à demi-charge, alors que la
+vitesse à vide reste pratiquement inchangée.
+Si un conducteur surveille en permanence la
+machine, il peut, en modifiant à la demande lavaleur de la résistance, fixer la vitesse dans unecertaine zone pour les couples relativement
+importants, mais tout réglage est pratiquement
+impossible pour les faibles couples. En effet, sipour obtenir un point « faible vitesse à faiblecouple », il insère une très forte résistance, lamoindre variation du couple résistant fait passerla vitesse de zéro à près de 100 %. La
+caractéristique est trop instable.
+Pour des machines à variation particulière du
+couple résistant en fonction de la vitesse, leréglage peut s’avérer également impossible.Exemple de fonctionnement en glissement. Pourune machine qui applique au moteur un couple
+résistant de 0,8 Cn, il peut être obtenu des
+vitesses différentes représentées par le signe 
+•
+sur le diagramme de la figure 19 .
+A couple égal, la vitesse diminue lorsque la
+résistance rotorique augmente.
+1
+0,75
+0,50
+0,25
+0 0,5 1 1,5 2 0,8 CoupleVitesseZone de 
+fonctionnement en glissementZone 
+d'accélération
+Courbe naturelle du moteur
+Courbe avec 
+résistance rotorique  faible
+Courbe avec 
+résistance rotorique  importante
+Cahier Technique Schneider Electric n ° 207 / p.203.3 Autres syst èmes de variation de vitesse
+Le variateur de tension
+Ce dispositif n’est utilisé que pour des moteurs
+asynchrones de petite puissance. Il nécessite unmoteur à cage résistante.
+La variation de vitesse s’obtient en augmentant
+le glissement du moteur consécutif à ladiminution de tension.
+Son utilisation est assez répandue dans les
+systèmes de ventilation, de pompes et de
+compresseurs, applications pour lesquelles sacaractéristique du couple disponible permet unfonctionnement satisfaisant. Les convertisseurs
+de fréquence devenant très compétitifs
+remplacent progressivement cette solution.
+Autres syst èmes électrom écaniques
+Les systèmes électromécaniques de réglage de
+vitesse, cités ci-après pour mémoire, sont d’unemploi moins fréquent depuis la généralisation
+des variateurs de vitesse électroniques.
+c Moteurs alternatifs à collecteur (Schrage)
+Il s’agit de moteurs spéciaux. La variation de
+vitesse est obtenue en faisant varier, par rapport
+à la ligne neutre, la position des balais sur lecollecteur.
+c Variateurs à courant de Foucault
+Il se compose d’une cloche connectéedirectement au moteur asynchrone tournant à
+vitesse constante, et d’un rotor comportant un
+bobinage alimenté par du courant continu(cf.fig. 20  ).
+Le mouvement est transmis à l’arbre de sortie
+par couplage électromagnétique. En ajustant
+l’excitation de ce bobinage, il est possibled’ajuster le glissement de cet ensemble.Une génératrice tachymétrique incorporée
+permet de contrôler la vitesse avec une bonne
+précision.
+Un système de ventilation permet d’évacuer les
+pertes dues au glissement.
+Ce principe a été largement utilisé dans des
+engins de levage et en particulier les grues dechantier. Sa constitution en fait un système
+robuste, sans pièces d’usure et peut convenir
+pour des fonctionnements intermittents et pourdes puissances jusqu’à une centaine de kW.
+c Groupe Ward Léonard
+Ce dispositif, autrefois très répandu, estconstitué d’un moteur et d’un générateur decourant continu lequel alimente un moteur a
+courant continu (cf. fig. 21  ).
+La variation de vitesse s’obtient en réglant
+l’excitation de la génératrice. Un faible courantde contrôle permet de maîtriser des puissances
+de plusieurs centaines de kW dans tous les
+quadrants couple vitesse. Ce type de variateur aété utilisé sur les laminoirs ainsi que sur les
+ascenseurs de mines.Fig. 20 : Coupe schématique d’un variateur de vitesse
+à courant de Foucault.
+Cette solution de variation de vitesse était la plus
+économique et la plus performante avantl’apparition des semi-conducteurs qui l’a renduobsolète.
+Variateurs de vitesse m écaniques et
+hydrauliques
+Les variateurs mécaniques et hydrauliques sont
+toujours utilisés.
+En ce qui concerne les variateurs mécaniques
+de multiples solutions ont été imaginées(poulies / courroies, billes, cônes …). Cesvariateurs ont pour désavantage de réclamerune maintenance soignée et se prêtentdifficilement aux asservissements. Ces
+variateurs sont fortement concurrencés par les
+convertisseurs de fréquence...
+Les variateurs hydrauliques sont toujours très
+répandus pour des applications particulières.Fig. 21  : Schéma d’un groupe Ward Léonard.
+Moteur 
+asynchroneGénératrice 
+tachymétriqueBobine alimentée en CC Cloche métallique
+Arbre
+de sortieRotor
+Moteur CC Génératrice Moteur CARéseau électrique
+Cahier Technique Schneider Electric n ° 207 / p.21Ils sont caractérisés par des puissances
+massiques considérables et la capacité de
+développer des couples importants a vitessenulle de manière continue. Dans les applicationsindustrielles, on les trouvera principalement dans
+des applications de servo–commande.
+Nous ne détaillerons pas ce type de variateurs
+qui n'entre pas dans le cadre de cet ouvrage.
+Cahier Technique Schneider Electric n ° 207 / p.22Le tableau ci-après permet de visualiser très
+rapidement l’ensemble des moteurs électriquesdisponibles, leurs principales caractéristiques et
+leurs domaines d’emploi.
+Il faut souligner la place tenue par les moteurs
+asynchrones à cage triphasés dont le qualificatifde « standard » est de nos jours renforcé par
+une parfaite adaptation à l’emploi consécutive audéveloppement des dispositifs électroniques qui
+autorisent la variation de vitesse.4  Conclusion
+Type de moteur Asynchrone à cage Asynchrone à Synchrone à Pas à pas A courant
+triphas é monophas é bague rotor bobin é rotor terres continu
+rares
+Coût du moteur Faible Faible Elevé Elevé Elevé Faible Elevé
+Moteur étanche Standard Possible Sur demande, Sur demande, Standard Standard Possible
+coûteux coûteux Très coûteux
+Démarrage Aisé Aisé Dispositif de Impossible à Non prévu Non prévu Non prévu
+direct sur démarrage partir de
+le réseau particulier quelques kW
+Variation de Facile Très rare Possible Fréquent Toujours Toujours Toujours
+vitesseCoût de De plus en Très Economique Très Assez Très Très
+la solution plus économique économique économique économique économique
+variation de économique
+vitesse
+Performance en De plus en Très faible Moyenne Elevée Très élevée Moyenne à Elevée à
+variation de plus élevée élevée très élevée
+vitesse
+Emploi Vitesse En majorité, Vitesse Vitesse Vitesse variable Vitesse Vitesse variable
+constante vitesse constante constante variable
+ou variable constante ou variable ou variable
+Utilisation Universelle Pour les petites En diminution Dans les Machines outils, Positionnement En diminution
+industrielle puissances grandes forte dynamique en boucle
+puissances en ouverte,
+moyenne pour les petites
+tension puissances
+Schneider Electric Direction Scientifique et Technique,
+Service Communication TechniqueF-38050 Grenoble cedex 9Télécopie : 33 (0)4 76 57 98 60
+E-mail : fr-tech-com@schneider-electric.comRéalisation : SEDOC
+Edition : Schneider Electric- 20 € -
+© 2004 Schneider Electric
+06-04 * Construire le nouveau monde de l’électricité
